@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "450798878342",
+    "project_id": "michelsaez-83ba0",
+    "storage_bucket": "michelsaez-83ba0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450798878342:android:7f64510d39efe3196b9b07",
+        "android_client_info": {
+          "package_name": "com.projfirebase.projectefirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3viOl5Ok4RiHw8dhW9HHDMAl0oWxs1Wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

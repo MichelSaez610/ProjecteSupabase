@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.projfirebase.projectefirebase.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_signIn"
+            app:destination="@id/signIn" />
+        <action
+            android:id="@+id/action_login_to_llistatItems"
+            app:destination="@id/llistatItems" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.projfirebase.projectefirebase.SignIn"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/llistatItems"
+        android:name="com.projfirebase.projectefirebase.LlistatItems"
+        android:label="fragment_llistat_items"
+        tools:layout="@layout/fragment_llistat_items" />
+</navigation>
