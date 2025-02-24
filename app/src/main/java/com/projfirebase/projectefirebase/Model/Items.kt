@@ -1,3 +1,11 @@
 package com.projfirebase.projectefirebase.Model
 
-data class Items(val name: String, val dimension: String, val stackable: Boolean, val stackLimit: Int)
+import kotlinx.serialization.Serializable
+
+@Serializable
+    data class Items(
+        val name: String,
+        val craftable: Boolean,
+        val stackable: Boolean,
+        val stack_limit: Int
+    )
