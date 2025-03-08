@@ -5,56 +5,41 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.projfirebase.projectefirebase.R
+import com.projfirebase.projectefirebase.ViewModel.SharedViewModel
+import com.projfirebase.projectefirebase.databinding.FragmentInsertBinding
+import kotlinx.coroutines.runBlocking
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [InsertFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class InsertFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_insert, container, false)
+        val binding = FragmentInsertBinding.inflate(inflater,container,false)
+
+        sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+
+        binding.InsertButton.setOnClickListener{
+            val craftable = binding.CraftableCheck.isChecked
+            val stackable = binding.StackableCheck.isChecked
+            val itemName = binding.insertName.text.toString()
+            val stackLimit = binding.InsertStackLimit.text.toString().toInt()
+
+            runBlocking {
+                sharedViewModel.insertItem(itemName, craftable, stackable, stackLimit)
+                Toast.makeText(context, "Item Inserted" + stackable, Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_insertFragment_to_llistatItems)
+            }
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment InsertFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            InsertFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

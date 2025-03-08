@@ -35,11 +35,8 @@
             android:id="@+id/action_llistatItems_to_insertFragment"
             app:destination="@id/insertFragment" />
         <action
-            android:id="@+id/action_llistatItems_to_deleteFragment"
-            app:destination="@id/deleteFragment" />
-        <action
-            android:id="@+id/action_llistatItems_to_updateFragment"
-            app:destination="@id/updateFragment" />
+            android:id="@+id/action_llistatItems_to_manageItemFragment"
+            app:destination="@id/manageItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/insertFragment"
@@ -51,19 +48,10 @@
             app:destination="@id/llistatItems" />
     </fragment>
     <fragment
-        android:id="@+id/deleteFragment"
-        android:name="com.projfirebase.projectefirebase.Fragments.DeleteFragment"
-        android:label="fragment_delete"
-        tools:layout="@layout/fragment_delete" >
-        <action
-            android:id="@+id/action_deleteFragment_to_llistatItems"
-            app:destination="@id/llistatItems" />
-    </fragment>
-    <fragment
-        android:id="@+id/updateFragment"
-        android:name="com.projfirebase.projectefirebase.Fragments.UpdateFragment"
+        android:id="@+id/manageItemFragment"
+        android:name="com.projfirebase.projectefirebase.Fragments.ManageItemFragment"
         android:label="fragment_update"
-        tools:layout="@layout/fragment_update" >
+        tools:layout="@layout/fragment_manageitem" >
         <action
             android:id="@+id/action_updateFragment_to_llistatItems"
             app:destination="@id/llistatItems" />

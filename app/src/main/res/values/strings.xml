@@ -8,4 +8,13 @@
     <string name="SIGNIN">REGISTRARSE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_name">Item Name</string>
+    <string name="stack_limit">Stack limit</string>
+    <string name="itemname">ItemName</string>
+    <string name="stacklimit">StackLimit</string>
+    <string name="insert">Insert</string>
+    <string name="stackable">Stackable</string>
+    <string name="craftable">Craftable</string>
+    <string name="stack_limit_number">Stack Limit Number</string>
+    <string name="name">Name</string>
 </resources>
